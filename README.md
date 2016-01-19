@@ -2,11 +2,9 @@
 
 To do list using flask.
 
----
-
 To set this project:
 
-1. 	Environment
+1. 	Environment:
 
 	virtualenvwrapper must be installed.
 
@@ -28,7 +26,7 @@ To set this project:
 	export DB_RAW=flask_todo
 	```
 
-2. 	Database
+2. 	Database:
 
  	MySQL must be installed.
 	
