@@ -1,7 +1,0 @@
-CREATE TABLE todo (
-	id INT NOT NULL AUTO_INCREMENT,
-	firstName VARCHAR(30) NOT NULL, 
-    lastName VARCHAR(30) NOT NULL, 
-    phone VARCHAR(30) NOT NULL,
-	PRIMARY KEY (id)
-);

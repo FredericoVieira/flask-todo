@@ -1,7 +1,6 @@
 from flask import Flask
 
 app = Flask(__name__)
-app.config.from_object('config')
 
 from app.views.home import mod as home_module
 from app.views.get_task import mod as get_task_module
