@@ -1,4 +1,3 @@
-from app import app
 from flask import Blueprint, render_template, request, jsonify
 from werkzeug import secure_filename
 from app.db import tasks
@@ -8,8 +7,10 @@ mod = Blueprint('task', __name__)
 
 @mod.route('/')
 @mod.route('/home')
+@mod.route('/home/')
 def index():
-    return render_template('task/index.html')
+    allTasks = tasks.all()
+    return render_template('task/index.html', allTasks=allTasks)
 
 @mod.route('/create', methods=['POST','GET'])
 def create():
@@ -23,7 +24,7 @@ def create():
 def edit(task_id):
     pass
 
-@mod.route('/<int:task_id>')
+@mod.route('/show/<int:task_id>')
 def show():
     task = tasks.find_one(id=task_id)
     return render_template('task/show.html', task=task_id)

@@ -1,9 +1,0 @@
-{% extends "task/layout.html" %}
-{% block content %}
-    <h1>Get Task</h1>
-
-      {% for task in task_list %}
-            <p>{{ task.name }} : {{ task.description }}</p>
-      {% endfor %}
-
-{% endblock %}

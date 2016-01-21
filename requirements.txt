@@ -5,7 +5,6 @@ itsdangerous==0.24
 Jinja2==2.8
 Mako==1.0.3
 MarkupSafe==0.23
-MySQL-python==1.2.5
 normality==0.2.4
 python-editor==0.5
 PyYAML==3.11
