@@ -1,16 +1,45 @@
 from app import app
-from flask import render_template, Blueprint, jsonify
-from app.db import conn
+from flask import Blueprint, render_template, request, jsonify
+from werkzeug import secure_filename
+from app.db import tasks
 
-mod = Blueprint('task', __name__ , url_prefix='/task')
-
-@mod.route('/get/<id>')
-def get():
-    return render_template('get_task.html')
+mod = Blueprint('task', __name__)
 
 
-@mod.route('/list')
-def list():
+@mod.route('/')
+@mod.route('/home')
+def index():
+    return render_template('task/index.html')
+
+@mod.route('/create', methods=['POST','GET'])
+def create():
+    if request.method == "POST":
+        form_data = request.form.to_dict()
+        tasks.insert(form_data)
+        return render_template('task/success_create.html')
+    return render_template('task/create.html')
+
+@mod.route('/edit/<int:task_id>')
+def edit(task_id):
+    pass
+
+@mod.route('/<int:task_id>')
+def show():
+    task = tasks.find_one(id=task_id)
+    return render_template('task/show.html', task=task_id)
+
+@mod.route('/delete/<int:task_id>')
+def delete(task_id):
+    pass
+
+
+# JSON
+@mod.route('/get/<int:task_id>')
+def get(task_id):
+    pass
+
+@mod.route('/all')
+def all():
     task_list = [
             {'name': u'Task 1', 'description': u'description 1'},
             {'name': u'Task 2', 'description': u'description 2'},
@@ -18,14 +47,3 @@ def list():
         ]
 
     return jsonify(task_list=task_list)
-
-
-@mod.route('/list_task')
-def list_task():
-    task_list = [
-            {'name': u'Task 1', 'description': u'description 1'},
-            {'name': u'Task 2', 'description': u'description 2'},
-            {'name': u'Task 3', 'description': u'description 3'},
-        ]
-
-    return render_template('get_task.html', task_list=task_list)
