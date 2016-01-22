@@ -21,23 +21,32 @@ def create():
         return render_template('task/success_create.html')
     return render_template('task/create.html')
 
-@mod.route('/edit/<int:task_id>')
-def edit(task_id):
+@mod.route('/delete', methods=['POST','GET'])
+def delete():
+    if request.method == "POST":
+        taskId = request.form.get('id')
+        tasks.delete(id=taskId)
+        return render_template('task/success_delete.html', taskId=taskId)
+    return render_template('task/delete.html')
+
+@mod.route('/delete/<int:taskId>')
+def delete_id(taskId):
+        tasks.delete(id=taskId)
+
+@mod.route('/edit/<int:taskId>')
+def edit(taskId):
     pass
 
-@mod.route('/show/<int:task_id>')
+@mod.route('/show/<int:taskId>')
 def show():
-    task = tasks.find_one(id=task_id)
-    return render_template('task/show.html', task=task_id)
+    task = tasks.find_one(id=taskId)
+    return render_template('task/show.html', task=taskId)
 
-@mod.route('/delete/<int:task_id>')
-def delete(task_id):
-    pass
 
 
 # JSON
-@mod.route('/get/<int:task_id>')
-def get(task_id):
+@mod.route('/get/<int:taskId>')
+def get(taskId):
     pass
 
 @mod.route('/all')
