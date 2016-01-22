@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, jsonify
 from werkzeug import secure_filename
 from app.db import tasks
+import json
 
 mod = Blueprint('task', __name__)
 
@@ -41,10 +42,8 @@ def get(task_id):
 
 @mod.route('/all')
 def all():
-    task_list = [
-            {'name': u'Task 1', 'description': u'description 1'},
-            {'name': u'Task 2', 'description': u'description 2'},
-            {'name': u'Task 3', 'description': u'description 3'},
-        ]
+    import pdb; pdb.set_trace()
+    allTasks = tasks.all()
+    json.dumps(allTasks, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
-    return jsonify(task_list=task_list)
+    return jsonify(task_list=allTasks)
