@@ -17,6 +17,7 @@
     <table id="grid" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
             </tr>
@@ -29,7 +30,8 @@
             $('#grid').DataTable( {
                 "sAjaxSource": "http://localhost:5000/all",
                 "sAjaxDataProp": "task_list",
-                "columns": [
+                "aoColumnsDefs": [
+                    { "data": "id" },
                     { "data": "name" },
                     { "data": "description" }
                 ]

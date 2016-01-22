@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify
 from werkzeug import secure_filename
-from app.db import tasks
+from app.db import db, tasks
 import json
 
 mod = Blueprint('task', __name__)
@@ -42,8 +42,9 @@ def get(task_id):
 
 @mod.route('/all')
 def all():
-    import pdb; pdb.set_trace()
-    allTasks = tasks.all()
-    json.dumps(allTasks, default=lambda o: o.__dict__, sort_keys=True, indent=4)
-
+    result = db.query('SELECT id, taskName, taskDesc FROM tasks')
+    allTasks = []
+    for row in result:
+        allTasks += [(row['id'], row['taskName'], row['taskDesc'])]
+    
     return jsonify(task_list=allTasks)
