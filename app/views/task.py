@@ -17,7 +17,7 @@ def create():
     if request.method == "POST":
         form_data = request.form.to_dict()
         tasks.insert(form_data)
-        return render_template('task/success_create.html')
+        return render_template('task/index.html')
     return render_template('task/create.html')
 
 @mod.route('/delete', methods=['POST','GET'])

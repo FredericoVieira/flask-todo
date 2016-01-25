@@ -2,7 +2,31 @@
 {% block content %}
 <h1>Insert Task</h1>
 
-<form action="{{ url_for('task.create') }}" method="post" name="Task">
+<script language="javascript" type="text/javascript">
+    function formValidate() {
+
+        var taskName = Task.taskName.value;
+        var taskDesc = Task.taskDesc.value;
+     
+        if (taskName == "") {
+            alert('Preencha o campo com o nome da tarefa!');
+            Task.taskName.focus();
+            return false;
+        }
+
+        else if (taskDesc == "") {
+            alert('Preencha o campo com a descrição da tarefa!');
+            Task.taskDesc.focus();
+            return false;
+        }
+
+        else {
+            alert('Tarefa criada com sucesso!');
+        }
+    }
+</script>
+
+<form action="{{ url_for('task.create') }}" method="post" name="Task" onsubmit="return formValidate()">
     <p>
         <label>Task Name:<br/>
             <textarea name="taskName" id="taskName"></textarea>

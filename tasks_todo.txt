@@ -1,12 +1,14 @@
 ###Tasks###
 
 Create:
-[ ] - Button create task! -> layout.html
-[ ] - JS to show success create! -> create.html
+[X] - Button create task! -> layout.html
+[X] - JS to validate form! -> create.html
+[X] - JS to show success create! -> create.html
 
 Edit:
 [ ] - Button edit task! -> layout.html
-[ ] - Form edit! -> edit.html
+[ ] - Form edit (Show Id - Not Editable and Name and Desc Editables)! -> edit.html
+[ ] - JS to validate form! -> create.html
 [ ] - JS to show success edit! -> edit.html
 
 Delete:
