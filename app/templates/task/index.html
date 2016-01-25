@@ -1,17 +1,10 @@
 {% extends "task/layout.html" %}
 {% block content %}
-
-    <h1>Home</h1>
-
-    <h2>Show Tasks by Python Object</h2>
-
-    {% for task in allTasks %}
-        <p>{{ task.taskName }} : {{ task.taskDesc }}</p>
-    {% endfor %}
-
     <script type="text/javascript" src="/static/jquery-1.12.0.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" />
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"> </script>
+
+    <h1>Home</h1>
 
     <h2>Show Tasks by Datatable and JSON</h2>
 

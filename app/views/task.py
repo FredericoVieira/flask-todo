@@ -10,8 +10,7 @@ mod = Blueprint('task', __name__)
 @mod.route('/home')
 @mod.route('/home/')
 def index():
-    allTasks = tasks.all()
-    return render_template('task/index.html', allTasks=allTasks)
+    return render_template('task/index.html')
 
 @mod.route('/create', methods=['POST','GET'])
 def create():
@@ -35,7 +34,7 @@ def delete_id(taskId):
 
 @mod.route('/edit/<int:taskId>')
 def edit(taskId):
-    pass
+    return render_template('task/edit.html')
 
 @mod.route('/show/<int:taskId>')
 def show():
@@ -55,5 +54,6 @@ def all():
     allTasks = []
     for row in result:
         allTasks += [(row['id'], row['taskName'], row['taskDesc'])]
-    
+
     return jsonify(task_list=allTasks)
+    #return jsonify(task_list = [row for result in tasks.all()])

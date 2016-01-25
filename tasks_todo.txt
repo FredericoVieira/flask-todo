@@ -1,0 +1,16 @@
+###Tasks###
+
+Create:
+[ ] - Button create task! -> layout.html
+[ ] - JS to show success create! -> create.html
+
+Edit:
+[ ] - Button edit task! -> layout.html
+[ ] - Form edit! -> edit.html
+[ ] - JS to show success edit! -> edit.html
+
+Delete:
+[ ] - Button delete task! -> layout.html
+[ ] - JS to show success delete! -> index.html
+
+

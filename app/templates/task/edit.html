@@ -2,7 +2,12 @@
 {% block content %}
 <h1>Insert Task</h1>
 
-<form action="{{ url_for('task.create') }}" method="post" name="Task">
+<form action="{{ url_for('task.edit') }}" method="post" name="Task">
+    <p>
+        <label>Task Id:<br/>
+            <textarea name="taskId" id="taskId"></textarea>
+        </label>
+    </p>
     <p>
         <label>Task Name:<br/>
             <textarea name="taskName" id="taskName"></textarea>
@@ -13,7 +18,7 @@
             <textarea name="taskDesc" id="taskDesc"></textarea>
         </label>
     </p>
-    <input type="submit" value="Create"></br>
+    <input type="submit" value="Edit"></br>
 </form>
 
 {% endblock %}
