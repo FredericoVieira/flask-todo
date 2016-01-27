@@ -1,0 +1,19 @@
+###Tasks###
+
+Create:
+
+Edit:
+[ ] - Button edit task! -> layout.html
+[ ] - Form edit (Show Id - Not Editable and Name and Desc Editables)! -> edit.html
+[ ] - JS to validate form! -> create.html
+[ ] - JS to show success edit! -> edit.html
+
+Delete:
+[ ] - Button delete task! -> layout.html
+[ ] - JS to show success delete! -> index.html
+
+General
+[ ] - Add bootstrap!
+[ ] - Add user login (flask-login)
+
+
