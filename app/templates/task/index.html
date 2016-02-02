@@ -7,6 +7,7 @@
     <h1>Home</h1>
 
     <button id="create">Create Task</button>
+    <button id="delete">Delete Task</button>
 
     <script type="text/javascript" charset="utf-8">
     $('#create').click(function() {
@@ -29,15 +30,32 @@
     <script type="text/javascript" charset="utf-8">
 
         $(document).ready(function() {
-            $('#grid').DataTable( {
+            var table = $('#grid').DataTable( {
                 "sAjaxSource": "http://localhost:5000/all",
                 "sAjaxDataProp": "task_list",
                 "aoColumnsDefs": [
                     { "data": "id" },
                     { "data": "name" },
                     { "data": "description" }
-                ]
+                ],
             });
-        });
+
+            $('#grid tbody').on('click', 'tr', function(){
+                if ($(this).hasClass('selected')){
+                    $(this).removeClass('selected');
+                }
+                else {
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                }
+            } );
+ 
+            $('#delete').click(function(){
+                table.row('.selected').remove().draw(false);
+                //Needs to delete from db now...
+            } );
+
+        } );
+
     </script>
 {% endblock %}
