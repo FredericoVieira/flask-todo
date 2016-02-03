@@ -31,7 +31,7 @@
 
         $(document).ready(function() {
             var table = $('#grid').DataTable( {
-                "sAjaxSource": "http://localhost:5000/all",
+                "sAjaxSource": "/all",
                 "sAjaxDataProp": "task_list",
                 "aoColumnsDefs": [
                     { "data": "id" },
@@ -48,16 +48,22 @@
                     table.$('tr.selected').removeClass('selected');
                     $(this).addClass('selected');
                 }
-            } );
+            });
  
             $('#delete').click(function(){
-                table.row('.selected').remove().draw(false);
+                table_line = table.row('.selected')[0]
+                row_id = table.data()[table_line][0]
 
-                //Needs to delete from db now...
+                $.ajax({
+                 url: "/delete/"+row_id,
+                 success: function(){
+                     alert("Tarefa deletada com sucesso!");
+                 }
+                })
                 
-            } );
-
-        } );
+                table.row('.selected').remove().draw(false);
+            });
+        });
 
     </script>
 {% endblock %}
