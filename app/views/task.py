@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, jsonify
+from flask import Blueprint, render_template, redirect, request, jsonify
 from werkzeug import secure_filename
 from app.db import db, tasks
 import json
@@ -17,35 +17,28 @@ def create():
     if request.method == "POST":
         form_data = request.form.to_dict()
         tasks.insert(form_data)
-        return render_template('task/index.html')
+        return redirect('/home')
     return render_template('task/create.html')
 
-@mod.route('/delete', methods=['POST','GET'])
-def delete():
-    if request.method == "POST":
-        taskId = request.form.get('id')
-        tasks.delete(id=taskId)
-        return render_template('task/success_delete.html', taskId=taskId)
-    return render_template('task/delete.html')
+@mod.route('/delete/<int:task_id>')
+def delete(task_id):
+    tasks.delete(id=task_id)
+    return redirect('/home')
 
-@mod.route('/delete/<int:taskId>')
-def delete_id(taskId):
-        tasks.delete(id=taskId)
-
-@mod.route('/edit/<int:taskId>')
-def edit(taskId):
+#@mod.route('/edit/<int:task_id>')
+#def edit(task_id):
+@mod.route('/edit')
+def edit():
     return render_template('task/edit.html')
 
-@mod.route('/show/<int:taskId>')
+@mod.route('/show/<int:task_id>')
 def show():
-    task = tasks.find_one(id=taskId)
-    return render_template('task/show.html', task=taskId)
+    task = tasks.find_one(id=task_id)
+    return render_template('task/show.html', task=task_id)
 
-
-
-# JSON
-@mod.route('/get/<int:taskId>')
-def get(taskId):
+#JSON
+@mod.route('/get/<int:task_id>')
+def get(task_id):
     pass
 
 @mod.route('/all')
