@@ -9,8 +9,7 @@ Edit:
 [ ] - JS to show success edit! -> edit.html
 
 Delete:
-[ ] - Button delete task! -> layout.html
-[ ] - JS to show success delete! -> index.html
+[ ] - Verify redirect in flask, not working.
 
 General
 [ ] - Add bootstrap!
