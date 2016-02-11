@@ -20,16 +20,19 @@ def create():
         return redirect('/home')
     return render_template('task/create.html')
 
-@mod.route('/delete/<int:task_id>')
+@mod.route('/delete/<int:task_id>', methods=['POST','GET'])
 def delete(task_id):
-    tasks.delete(id=task_id)
+    if request.method == "POST":
+        tasks.delete(id=task_id)
     return redirect('/home')
 
-#@mod.route('/edit/<int:task_id>')
-#def edit(task_id):
-@mod.route('/edit')
-def edit():
-    return render_template('task/edit.html')
+@mod.route('/edit/<int:task_id>', methods=['POST','GET'])
+def edit(task_id):
+    if request.method == "POST":
+        print "TASK "+str(task_id)
+        return redirect('/create')
+        #return render_template('task/edit.html', task_id=task_id)
+    return redirect('/home')
 
 @mod.route('/show/<int:task_id>')
 def show():

@@ -8,6 +8,7 @@
 
     <button id="create">Create Task</button>
     <button id="delete">Delete Task</button>
+    <button id="edit">Edit Task</button>
 
     <script type="text/javascript" charset="utf-8">
     $('#create').click(function() {
@@ -54,14 +55,19 @@
                 table_line = table.row('.selected')[0]
                 row_id = table.data()[table_line][0]
 
-                $.ajax({
-                 url: "/delete/"+row_id,
-                 success: function(){
-                     alert("Tarefa deletada com sucesso!");
-                 }
-                })
-                
+                $.post("/delete/"+row_id,
+                    function(){
+                        alert("Tarefa deletada com sucesso!");
+                    }
+                );
                 table.row('.selected').remove().draw(false);
+            });
+
+            $('#edit').click(function(){
+                table_line = table.row('.selected')[0]
+                row_id = table.data()[table_line][0]
+
+                $.post("/edit/"+row_id);
             });
         });
 
