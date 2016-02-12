@@ -29,10 +29,10 @@ def delete(task_id):
 @mod.route('/edit/<int:task_id>', methods=['POST','GET'])
 def edit(task_id):
     if request.method == "POST":
-        print "TASK "+str(task_id)
-        return redirect('/create')
-        #return render_template('task/edit.html', task_id=task_id)
-    return redirect('/home')
+        #save edition in database
+        return rendirect('/home')
+    return render_template('task/edit.html', task_id=task_id)
+
 
 @mod.route('/show/<int:task_id>')
 def show():

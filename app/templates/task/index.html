@@ -67,7 +67,9 @@
                 table_line = table.row('.selected')[0]
                 row_id = table.data()[table_line][0]
 
-                $.post("/edit/"+row_id);
+                //needs to pass task_id = row_id
+                window.location='{{ url_for('task.edit', task_id=1) }}';
+
             });
         });
 
