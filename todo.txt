@@ -3,13 +3,12 @@
 Create:
 
 Edit:
-[ ] - Button edit task! -> layout.html
+[X] - Button edit task! -> layout.html
 [ ] - Form edit (Show Id - Not Editable and Name and Desc Editables)! -> edit.html
 [ ] - JS to validate form! -> create.html
 [ ] - JS to show success edit! -> edit.html
 
 Delete:
-[ ] - Verify redirect in flask, not working.
 
 General
 [ ] - Add bootstrap!
