@@ -3,12 +3,7 @@
 Create:
 
 Edit:
-[X] - Button edit task! -> layout.html
-[X] - Form edit (Show Id - Not Editable and Name and Desc Editables)! -> edit.html
-[X] - JS to validate form! -> edit.html
-[X] - JS to show success edit! -> edit.html
-[X] - Cancel Edit, return to home -> edit.html
-[X] - Save editions in database! -> views/edit
+[] - Save editions in database! -> views/edit
 
 Delete:
 
