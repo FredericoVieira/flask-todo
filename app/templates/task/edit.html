@@ -1,5 +1,53 @@
 {% extends "task/layout.html" %}
 {% block content %}
+
+<script type="text/javascript" src="/static/jquery-1.12.0.js"></script>
+
 <h1>Edit Task - Id: {{ task_id }}</h1>
+
+<script language="javascript" type="text/javascript">
+    function formValidate() {
+
+        var task_name = Task.task_name.value;
+        var task_desc = Task.task_desc.value;
+     
+        if (task_name == "") {
+            alert('Preencha o campo com o nome da tarefa!');
+            Task.task_name.focus();
+            return false;
+        }
+
+        else if (task_desc == "") {
+            alert('Preencha o campo com a descrição da tarefa!');
+            Task.task_desc.focus();
+            return false;
+        }
+
+        else {
+            alert('Tarefa editada com sucesso!');
+        }
+    }
+</script>
+
+<form action="{{ url_for('task.edit', task_id=task_id) }}" method="post" name="Task" onsubmit="return formValidate()">
+    <p>
+        <label>Task Name:<br/>
+            <textarea name="taskName" id="task_name"></textarea>
+        </label>
+    </p>
+    <p>
+        <label>Description:<br/>
+            <textarea name="taskDesc" id="task_desc"></textarea>
+        </label>
+    </p>
+    <input type="submit" value="Edit">
+    <button id="cancel">Cancel Edition</button>
+</form>
+
+<script type="text/javascript" charset="utf-8">
+    $('#cancel').click(function(){
+        window.location.href = "/home/";
+    });
+</script>
 
 {% endblock %}
