@@ -30,7 +30,7 @@ def delete(task_id):
 def edit(task_id):
     if request.method == "POST":
         #save edition in database
-        return rendirect('/home')
+        return redirect('/home')
     return render_template('task/edit.html', task_id=task_id)
 
 @mod.route('/show/<int:task_id>')
