@@ -7,8 +7,11 @@ Edit:
 
 Delete:
 
-General
+General:
 [ ] - Add bootstrap!
 [ ] - Add user login (flask-login)
+
+Show:
+[ ] - Show especificaly task!
 
 
