@@ -33,7 +33,6 @@ def edit(task_id):
         return rendirect('/home')
     return render_template('task/edit.html', task_id=task_id)
 
-
 @mod.route('/show/<int:task_id>')
 def show():
     task = tasks.find_one(id=task_id)

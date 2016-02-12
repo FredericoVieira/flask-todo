@@ -9,6 +9,7 @@
     <button id="create">Create Task</button>
     <button id="delete">Delete Task</button>
     <button id="edit">Edit Task</button>
+    <div id=aaa></div>
 
     <script type="text/javascript" charset="utf-8">
     $('#create').click(function() {
@@ -67,9 +68,7 @@
                 table_line = table.row('.selected')[0]
                 row_id = table.data()[table_line][0]
 
-                //needs to pass task_id = row_id
-                window.location='{{ url_for('task.edit', task_id=1) }}';
-
+                window.location.href = "/edit/"+row_id;
             });
         });
 
