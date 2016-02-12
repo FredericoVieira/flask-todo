@@ -4,9 +4,11 @@ Create:
 
 Edit:
 [X] - Button edit task! -> layout.html
-[ ] - Form edit (Show Id - Not Editable and Name and Desc Editables)! -> edit.html
-[ ] - JS to validate form! -> create.html
-[ ] - JS to show success edit! -> edit.html
+[X] - Form edit (Show Id - Not Editable and Name and Desc Editables)! -> edit.html
+[X] - JS to validate form! -> edit.html
+[X] - JS to show success edit! -> edit.html
+[X] - Cancel Edit, return to home -> edit.html
+[X] - Save editions in database! -> views/edit
 
 Delete:
 
