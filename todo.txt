@@ -3,16 +3,17 @@
 Create:
 
 Edit:
-[X] - Save editions in database! -> views/edit
 [ ] - Show current values for taskName and taskDesc in edit form
 
 Delete:
+
+Show:
+[ ] - Show especificaly task!
 
 General:
 [ ] - Add bootstrap!
 [ ] - Add user login (flask-login)
 
-Show:
-[ ] - Show especificaly task!
-
+JavaScript:
+[ ] - Treat exceptions on click in delete and edit button and row is selected
 
