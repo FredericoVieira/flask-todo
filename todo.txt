@@ -3,7 +3,8 @@
 Create:
 
 Edit:
-[] - Save editions in database! -> views/edit
+[X] - Save editions in database! -> views/edit
+[ ] - Show current values for taskName and taskDesc in edit form
 
 Delete:
 
