@@ -16,8 +16,7 @@ def index():
 def create():
     if request.method == "POST":
         form_data = request.form.to_dict()
-        form_data[id]='task_id'
-        tasks.insert(form_data, ['id'])
+        tasks.insert(form_data)
         return redirect('/home')
     return render_template('task/create.html')
 
