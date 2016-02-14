@@ -16,7 +16,8 @@ def index():
 def create():
     if request.method == "POST":
         form_data = request.form.to_dict()
-        tasks.insert(form_data)
+        form_data[id]='task_id'
+        tasks.insert(form_data, ['id'])
         return redirect('/home')
     return render_template('task/create.html')
 
@@ -29,7 +30,9 @@ def delete(task_id):
 @mod.route('/edit/<int:task_id>', methods=['POST','GET'])
 def edit(task_id):
     if request.method == "POST":
-        #save edition in database
+        form_data = request.form.to_dict()
+        form_data['id']=task_id
+        tasks.update(form_data, ['id'])
         return redirect('/home')
     return render_template('task/edit.html', task_id=task_id)
 
