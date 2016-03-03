@@ -12,6 +12,7 @@ mod = Blueprint('task', __name__)
 def index():
     return render_template('task/index.html')
 
+
 @mod.route('/create', methods=['POST','GET'])
 def create():
     if request.method == "POST":
@@ -20,11 +21,13 @@ def create():
         return redirect('/home')
     return render_template('task/create.html', action=url_for('task.create'))
 
+
 @mod.route('/delete/<int:task_id>', methods=['POST','GET'])
 def delete(task_id):
     if request.method == "POST":
         tasks.delete(id=task_id)
     return redirect('/home')
+
 
 @mod.route('/edit/<int:task_id>', methods=['POST','GET'])
 def edit(task_id):
@@ -38,15 +41,18 @@ def edit(task_id):
         tasks.update(form_data, ['id'])
         return redirect('/home')
 
+
 @mod.route('/show/<int:task_id>')
 def show(task_id):
     task = tasks.find_one(id=task_id)
     return render_template('task/show.html', task=task_id)
 
+
 #JSON
 @mod.route('/get/<int:task_id>')
 def get(task_id):
     pass
+
 
 @mod.route('/all')
 def all():
