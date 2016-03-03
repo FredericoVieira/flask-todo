@@ -1,9 +1,8 @@
-###Tasks###
+#Tasks#
 
 Create:
 
 Edit:
-[ ] - Show current values for taskName and taskDesc in edit form
 
 Delete:
 
@@ -11,9 +10,11 @@ Show:
 [ ] - Show especificaly task!
 
 General:
-[ ] - Add bootstrap!
+[ ] - Create a _form to use in create and edit
+[ ] - Refactor javascript
+[ ] - Refactor buttons code to submit
+[ ] - Add bootstrap notify!
 [ ] - Add user login (flask-login)
 
 JavaScript:
 [ ] - Treat exceptions on click in delete and edit button and row is selected
-
