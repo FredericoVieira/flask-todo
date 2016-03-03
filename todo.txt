@@ -7,13 +7,11 @@ Edit:
 Delete:
 
 Show:
-[ ] - Show especificaly task!
 
 General:
-[ ] - Create a _form to use in create and edit
 [ ] - Refactor javascript
 [ ] - Refactor buttons code to submit
-[ ] - Add bootstrap notify!
+[ ] - Add bootstrap!
 [ ] - Add user login (flask-login)
 
 JavaScript:
