@@ -1,0 +1,45 @@
+<script language="javascript" type="text/javascript">
+    function formValidate() {
+
+        var task_name = Task.task_name.value;
+        var task_desc = Task.task_desc.value;
+     
+        if (task_name == "") {
+            alert('Preencha o campo com o nome da tarefa!');
+            Task.task_name.focus();
+            return false;
+        }
+
+        else if (task_desc == "") {
+            alert('Preencha o campo com a descrição da tarefa!');
+            Task.task_desc.focus();
+            return false;
+        }
+
+        else {
+            alert('Tarefa enviada com sucesso!');
+        }
+    }
+</script>
+
+<form action="{{ action }}" method="post" name="Task" onsubmit="return formValidate()">
+    <p>
+        <label>Task Name:<br/>
+            <textarea name="taskName" id="task_name" placeholder="{{ task['taskName'] }}"></textarea>
+        </label>
+    </p>
+    <p>
+        <label>Description:<br/>
+            <textarea name="taskDesc" id="task_desc" placeholder="{{ task['taskDesc'] }}"></textarea>
+        </label>
+    </p>
+    <input type="submit" value="Enviar">
+</form>
+
+<button id="cancel">Cancelar</button>
+
+<script type="text/javascript" charset="utf-8">
+    $('#cancel').click(function(){
+        window.location.href = "/home/";
+    });
+</script>
