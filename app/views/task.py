@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, request, jsonify
+from flask import Blueprint, render_template, redirect, url_for, request, jsonify
 from werkzeug import secure_filename
 from app.db import db, tasks
 import json
@@ -18,7 +18,7 @@ def create():
         form_data = request.form.to_dict()
         tasks.insert(form_data)
         return redirect('/home')
-    return render_template('task/create.html')
+    return render_template('task/create.html', action=url_for('task.create'))
 
 @mod.route('/delete/<int:task_id>', methods=['POST','GET'])
 def delete(task_id):
@@ -28,15 +28,18 @@ def delete(task_id):
 
 @mod.route('/edit/<int:task_id>', methods=['POST','GET'])
 def edit(task_id):
-    if request.method == "POST":
+    if request.method == "GET":
+        task = tasks.find_one(id=task_id)
+        return render_template('task/edit.html', task=task, action=url_for('task.edit', task_id=task_id) )
+
+    elif request.method == "POST":
         form_data = request.form.to_dict()
         form_data['id']=task_id
         tasks.update(form_data, ['id'])
         return redirect('/home')
-    return render_template('task/edit.html', task_id=task_id)
 
 @mod.route('/show/<int:task_id>')
-def show():
+def show(task_id):
     task = tasks.find_one(id=task_id)
     return render_template('task/show.html', task=task_id)
 
