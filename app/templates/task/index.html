@@ -9,6 +9,7 @@
     <button id="create">Create Task</button>
     <button id="delete">Delete Task</button>
     <button id="edit">Edit Task</button>
+    <button id="show">Show Task</button>
 
     <script type="text/javascript" charset="utf-8">
     $('#create').click(function() {
@@ -68,6 +69,13 @@
                 row_id = table.data()[table_line][0]
 
                 window.location.href = "/edit/"+row_id;
+            });
+
+            $('#show').click(function(){
+                table_line = table.row('.selected')[0]
+                row_id = table.data()[table_line][0]
+
+                window.location.href = "/show/"+row_id;
             });
         });
 
