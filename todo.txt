@@ -12,6 +12,7 @@ General:
 [ ] - Refactor javascript
 [ ] - Refactor buttons code to submit
 [ ] - Add bootstrap!
+[ ] - Flash messages
 [ ] - Add user login (flask-login)
 
 JavaScript:
