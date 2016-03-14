@@ -44,10 +44,9 @@ def update(task_id):
     return redirect('/')
 
 
-@mod.route('/delete/<int:task_id>', methods=['POST','GET'])
+@mod.route('/delete/<int:task_id>', methods=['POST'])
 def delete(task_id):
-    if request.method == "POST":
-        tasks.delete(id=task_id)
+    tasks.delete(id=task_id)
     return redirect('/')
 
 
