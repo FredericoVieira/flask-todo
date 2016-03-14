@@ -25,21 +25,14 @@
 <form action="{{ action }}" method="post" name="Task" onsubmit="return formValidate()">
     <p>
         <label>Task Name:<br/>
-            <textarea name="taskName" id="task_name" placeholder="{{ task['taskName'] }}"></textarea>
+            <input type="text" class="form-control" name="taskName" id="task_name" placeholder="{{ task['taskName'] }}">
         </label>
     </p>
     <p>
         <label>Description:<br/>
-            <textarea name="taskDesc" id="task_desc" placeholder="{{ task['taskDesc'] }}"></textarea>
+            <textarea type="text" class="form-control" name="taskDesc" id="task_desc" placeholder="{{ task['taskDesc'] }}"></textarea>
         </label>
     </p>
-    <input type="submit" value="Enviar">
+    <input type="submit" class="btn btn-primary" value="Enviar">
+    <a class="btn btn-danger" href="/">Cancelar</a>
 </form>
-
-<button id="cancel">Cancelar</button>
-
-<script type="text/javascript" charset="utf-8">
-    $('#cancel').click(function(){
-        window.location.href = "/home/";
-    });
-</script>
