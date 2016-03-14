@@ -50,6 +50,11 @@ def delete(task_id):
     return redirect('/')
 
 
+@mod.route('/contact/', methods=['GET'])
+def contact():
+    return render_template('task/contact.html')
+
+
 #JSON
 @mod.route('/get/<int:task_id>')
 def get(task_id):
