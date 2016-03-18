@@ -7,11 +7,15 @@ Edit:
 Delete:
 
 Show:
+[ ] - Create template
+
+Show all:
+[ ] - Create new visualization for tasks
 
 General:
+[ ] - Add bootstrap/style in grid index
 [ ] - Refactor javascript
 [ ] - Refactor buttons code to submit
-[ ] - Add bootstrap!
 [ ] - Flash messages
 [ ] - Add user login (flask-login)
 
