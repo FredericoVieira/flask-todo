@@ -18,6 +18,8 @@ General:
 [ ] - Refactor buttons code to submit
 [ ] - Flash messages
 [ ] - Add user login (flask-login)
+[ ] - Insert checkbox selectors
+[ ] - Add fav task functionality
 
 JavaScript:
 [ ] - Treat exceptions on click in delete and edit button and row is selected
