@@ -2,12 +2,13 @@ body {
   padding-top: 70px;
 }
 
-footer {
+footer .container {
     font-size: 10px;
     margin-top: 20px;
     padding: 10px;
-    background-color: #eee;
     height: 35px;
+    border-radius: 6px;
+    background-color: #eee;
     text-align: center;
 }
 
