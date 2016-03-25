@@ -7,9 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="/static/css/style.css">
-        <title>Title</title>
+        <title>To Do List</title>
     </head>
     <body>
+      <header>
         <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container">
             <div class="navbar-header">
@@ -20,7 +21,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="{{ url_for('task.index') }}">ToDoList</a>
+              <a class="navbar-brand" href="{{ url_for('task.index') }}">#TDL</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
@@ -31,10 +32,17 @@
             </div>
           </div>
         </nav>
+      </header>
         <div class="container">
           {% block content %}
           {% endblock %}
         </div>
-
     </body>
+    <footer>
+      <div class="container">
+        <p>
+          Copyright 2016 Frederico Duarte Vieira  
+        </p>
+    </div>
+    </footer>
 </html>
