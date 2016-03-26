@@ -7,20 +7,18 @@ Edit:
 Delete:
 
 Show:
-[ ] - Create template
 
 Show all:
-[ ] - Create new visualization for tasks
 
 General:
-[ ] - Add bootstrap/style in grid index
+[ ] - Insert status functionality / checkbox selectors to done and undone tasks
+[ ] - Flash messages
+[ ] - Add bootstrap style columns
 [ ] - Refactor javascript
 [ ] - Refactor buttons code to submit
-[ ] - Flash messages
-[ ] - Add user login (flask-login)
-[ ] - Insert checkbox selectors
+[ ] - Add progress bar on page loading
 [ ] - Add fav task functionality
-[ ] - Add progress bar
+[ ] - Add user login (flask-login)
 
 JavaScript:
 [ ] - Treat exceptions on click in delete and edit button and row is selected
