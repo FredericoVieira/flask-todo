@@ -1,0 +1,14 @@
+{% extends "task/layout.html" %}
+{% block content %}
+
+<h1>Show All Tasks</h1>
+
+{% for task in tasks %}
+    <p>
+        <b>Id:</b> {{ task['id'] }} </br>
+        <b>Task Name:</b> {{ task['taskName'] }} </br>
+        <b>Task Description:</b> {{ task['taskDesc'] }} </br>
+    </p>
+{% endfor %}
+
+{% endblock %}
