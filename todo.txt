@@ -20,6 +20,7 @@ General:
 [ ] - Add user login (flask-login)
 [ ] - Insert checkbox selectors
 [ ] - Add fav task functionality
+[ ] - Add progress bar
 
 JavaScript:
 [ ] - Treat exceptions on click in delete and edit button and row is selected
