@@ -8,7 +8,7 @@
         <b>Id:</b> {{ task['id'] }} </br>
         <b>Name:</b> {{ task['name'] }} </br>
         <b>Description:</b> {{ task['description'] }} </br>
-        <b>Status:</b> {{ task['status'] }} </br>
+        <b>Status:</b> {% if task['status'] == '0' %} Inativa {% elif task['status'] == '1' %} Em desenvolvimento {% else %} Concluída {% endif %}  </br>
     </p>
 {% endfor %}
 
