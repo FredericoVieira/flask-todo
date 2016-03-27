@@ -72,7 +72,13 @@ def all():
     tasks = db.query('SELECT id, name, description, status FROM tasks')
     all_tasks = []
     for task in tasks:
-        all_tasks += [(task['id'], task['name'], task['description'], task['status'])]
+        if task['status'] == '0':
+            status = 'Inativa'
+        elif task['status'] == '1':
+            status = 'Em desenvolvimento'
+        else:
+            status = 'Concluida'
+        all_tasks += [(task['id'], task['name'], task['description'], status)]
 
     return jsonify(task_list=all_tasks)
     #return jsonify(task_list = [task for tasks in tasks.all()])
