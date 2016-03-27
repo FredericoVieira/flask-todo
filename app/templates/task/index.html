@@ -19,6 +19,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Status</th>
             </tr>
         </thead>
     </table>
@@ -32,8 +33,9 @@
                 "aoColumnsDefs": [
                     { "data": "id" },
                     { "data": "name" },
-                    { "data": "description" }
-                ],
+                    { "data": "description" },
+                    { "data": "status" }
+                ]
             });
 
             $('#grid tbody').on('click', 'tr', function(){
