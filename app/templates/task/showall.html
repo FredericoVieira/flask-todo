@@ -6,8 +6,9 @@
 {% for task in tasks %}
     <p>
         <b>Id:</b> {{ task['id'] }} </br>
-        <b>Task Name:</b> {{ task['name'] }} </br>
-        <b>Task Description:</b> {{ task['description'] }} </br>
+        <b>Name:</b> {{ task['name'] }} </br>
+        <b>Description:</b> {{ task['description'] }} </br>
+        <b>Status:</b> {{ task['status'] }} </br>
     </p>
 {% endfor %}
 
