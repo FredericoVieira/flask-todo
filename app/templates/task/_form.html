@@ -1,18 +1,18 @@
 <script language="javascript" type="text/javascript">
     function formValidate() {
 
-        var task_name = Task.task_name.value;
-        var task_desc = Task.task_desc.value;
+        var taskName = Task.taskName.value;
+        var taskDescription = Task.taskDescription.value;
      
-        if (task_name == "") {
+        if (taskName == "") {
             alert('Preencha o campo com o nome da tarefa!');
-            Task.task_name.focus();
+            Task.taskName.focus();
             return false;
         }
 
-        else if (task_desc == "") {
+        else if (taskDescription == "") {
             alert('Preencha o campo com a descrição da tarefa!');
-            Task.task_desc.focus();
+            Task.taskDescription.focus();
             return false;
         }
 
@@ -25,12 +25,12 @@
 <form action="{{ action }}" method="post" name="Task" onsubmit="return formValidate()">
     <p>
         <label>Task Name:<br/>
-            <input type="text" class="form-control" name="taskName" id="task_name" placeholder="{{ task['taskName'] }}">
+            <input type="text" class="form-control" name="name" id="taskName" placeholder="{{ task['name'] }}">
         </label>
     </p>
     <p>
         <label>Description:<br/>
-            <textarea type="text" class="form-control" name="taskDesc" id="task_desc" placeholder="{{ task['taskDesc'] }}"></textarea>
+            <textarea type="text" class="form-control" name="description" id="taskDescription" placeholder="{{ task['description'] }}"></textarea>
         </label>
     </p>
     <input type="submit" class="btn btn-primary" value="Enviar">
