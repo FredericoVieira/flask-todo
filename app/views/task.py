@@ -57,7 +57,7 @@ def contact():
 
 @mod.route('/showall/', methods=['GET'])
 def showall():
-    tasks = db.query('SELECT id, name, description FROM tasks')
+    tasks = db.query('SELECT id, name, description, status FROM tasks')
     return render_template('task/showall.html', tasks=tasks)
 
 
@@ -69,10 +69,10 @@ def get(task_id):
 
 @mod.route('/all')
 def all():
-    tasks = db.query('SELECT id, name, description FROM tasks')
+    tasks = db.query('SELECT id, name, description, status FROM tasks')
     all_tasks = []
     for task in tasks:
-        all_tasks += [(task['id'], task['name'], task['description'])]
+        all_tasks += [(task['id'], task['name'], task['description'], task['status'])]
 
     return jsonify(task_list=all_tasks)
     #return jsonify(task_list = [task for tasks in tasks.all()])
