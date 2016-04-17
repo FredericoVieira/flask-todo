@@ -78,5 +78,5 @@ def all():
             active = 'Ativa'
         all_tasks += [(task['id'], task['name'], task['description'], active)]
 
-    return jsonify(task_list=all_tasks)
+    return jsonify(tasks=all_tasks)
     #return jsonify(task_list = [task for tasks in tasks.all()])
