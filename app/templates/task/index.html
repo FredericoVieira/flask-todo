@@ -13,7 +13,7 @@
 
     <h2>Show Tasks by Datatable and JSON</h2>
 
-    <table id="grid" class="table" cellspacing="0" width="100%">
+    <table id="todo-table" class="table" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>ID</th>
@@ -23,63 +23,4 @@
             </tr>
         </thead>
     </table>
-
-    <script type="text/javascript" charset="utf-8">
-
-        $(document).ready(function() {
-            var table = $('#grid').DataTable( {
-                "sAjaxSource": "/all",
-                "sAjaxDataProp": "task_list",
-                "aoColumnsDefs": [
-                    { "data": "id" },
-                    { "data": "name" },
-                    { "data": "description" },
-                    { "data": "status" }
-                ],
-                "columns": [
-                    {"width": "5%"},
-                    {"width": "25%"},
-                    null,
-                    {"width": "13%"},
-                ]
-            });
-
-            $('#grid tbody').on('click', 'tr', function(){
-                if ($(this).hasClass('selected')){
-                    $(this).removeClass('selected');
-                }
-                else {
-                    table.$('tr.selected').removeClass('selected');
-                    $(this).addClass('selected');
-                }
-            });
- 
-            $('#delete').click(function(){
-                table_line = table.row('.selected')[0]
-                row_id = table.data()[table_line][0]
-
-                $.post("/delete/"+row_id,
-                    function(){
-                        alert("Tarefa deletada com sucesso!");
-                    }
-                );
-                table.row('.selected').remove().draw(false);
-            });
-
-            $('#edit').click(function(){
-                table_line = table.row('.selected')[0]
-                row_id = table.data()[table_line][0]
-
-                window.location.href = "/edit/"+row_id;
-            });
-
-            $('#show').click(function(){
-                table_line = table.row('.selected')[0]
-                row_id = table.data()[table_line][0]
-
-                window.location.href = "/show/"+row_id;
-            });
-        });
-
-    </script>
 {% endblock %}
